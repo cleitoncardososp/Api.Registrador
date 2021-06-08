@@ -1,0 +1,193 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Infraestrutura\\Infraestrutura.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Aplicacao\\Aplicacao.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Aplicacao\\Aplicacao.csproj",
+        "projectName": "Aplicacao",
+        "projectPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Aplicacao\\Aplicacao.csproj",
+        "packagesPath": "C:\\Users\\Cleiton\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Aplicacao\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Cleiton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\Dominio.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\Dominio.csproj",
+        "projectName": "Dominio",
+        "projectPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\Dominio.csproj",
+        "packagesPath": "C:\\Users\\Cleiton\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Cleiton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Infraestrutura\\Infraestrutura.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Infraestrutura\\Infraestrutura.csproj",
+        "projectName": "Infraestrutura",
+        "projectPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Infraestrutura\\Infraestrutura.csproj",
+        "packagesPath": "C:\\Users\\Cleiton\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Infraestrutura\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Cleiton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Aplicacao\\Aplicacao.csproj": {
+                "projectPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Aplicacao\\Aplicacao.csproj"
+              },
+              "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\Dominio.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "LiteDB": {
+              "target": "Package",
+              "version": "[5.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

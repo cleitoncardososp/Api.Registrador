@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pg2SoEZDf+T2oLzRegxil9HnfVWdRnJLuTYbgOhy7ByYxQIXgiXMsvYm9VWfqzpePGn2193ru8FKf43dDIHuCw==",
+  "dgSpecHash": "7hqVs+rWfVj7RpL66+rAHwRnUk1eFvWkFR+twwCt9ujEiwSDLPJoRzMNq20wGEdCPO38jPPL95KM3rHIOlKkQA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Cleiton\\Desktop\\Desafio3\\src\\Api.Registrador.Dominio\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\Dominio.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

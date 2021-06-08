@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Cleiton\\Desktop\\Desafio3\\src\\Api.Registrador.Dominio\\Domain.csproj",
-      "projectName": "Domain",
-      "projectPath": "C:\\Users\\Cleiton\\Desktop\\Desafio3\\src\\Api.Registrador.Dominio\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\Dominio.csproj",
+      "projectName": "Dominio",
+      "projectPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\Dominio.csproj",
       "packagesPath": "C:\\Users\\Cleiton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Cleiton\\Desktop\\Desafio3\\src\\Api.Registrador.Dominio\\obj\\",
+      "outputPath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Cleiton\\AppData\\Roaming\\NuGet\\NuGet.Config",
