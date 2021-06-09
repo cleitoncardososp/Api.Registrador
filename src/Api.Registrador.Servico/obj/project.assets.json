@@ -121,6 +121,7 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Dominio": "1.0.0",
+          "LiteDB": "5.0.10",
           "MediatR": "9.0.0"
         },
         "compile": {

@@ -16,8 +16,6 @@ namespace Domain.Entidades
         public List<Telefone> Telefones {get; set;}
         public String Token {get; set;}
 
-        
-
         public Usuario(string nome, string email, string senha, List<Telefone> telefones)
         {
             ExcecaoDominio.LancarQuando(() => String.IsNullOrEmpty(nome), "Nome do Usuário é Obrigatório");

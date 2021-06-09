@@ -10,24 +10,22 @@ using Microsoft.Extensions.Logging;
 namespace Servico.Controllers
 {
     [ApiController]
-    [Route("[controller]/cadastro")]
-    
-    public class RegistradorController : ControllerBase
+    [Route("[controller]")]
+    public class UsuarioController : ControllerBase
     {
-        
         public static IWebHostEnvironment _enviroment;
         public IMediator Mediator{get;set;}
-        private readonly ILogger<RegistradorController> _logger;
+        private readonly ILogger<UsuarioController> _logger;
 
-        public RegistradorController(IMediator mediator, ILogger<RegistradorController> logger, IWebHostEnvironment environment)
+        public UsuarioController(IMediator mediator, ILogger<UsuarioController> logger, IWebHostEnvironment environment)
         {
             Mediator = mediator;
             _logger = logger;
             _enviroment = environment;
         }
 
-        //Cadastrar Usuario
-        [HttpPost()]
+        //SIGN UP - cadadstrar
+        [HttpPost("signup")]
         public async Task<ActionResult> Post([FromBody]CadastrarUsuarioRequest request)
         {
             _logger.LogInformation("Recebido Post de Cadastro de Usuario", request);
@@ -58,7 +56,29 @@ namespace Servico.Controllers
                     
                 }
         }
+        
 
+        //SIGN IN - Logar
+        [HttpPost("signin")]
+        public async Task<ActionResult> EntrarUsuario([FromBody]EntrarUsuarioRequest request)
+        {
+            _logger.LogInformation("Dentro do Caso de Uso Entrar Usuario");
+
+            EntrarUsuarioResponse response = await Mediator.Send(request);
+            return Ok(response);
+        }
+
+
+        //ConsultarUsuario
+        [HttpGet("{IdUsuario}/buscarusuario")]
+        public async Task<ActionResult> ConsultarUsuario([FromBody]BuscarUsuarioRequest request)
+        {
+            _logger.LogInformation("Dentro do Caso de Uso Buscar Usuario");
+            
+            BuscarUsuarioResponse response = await Mediator.Send(request);
+            return Ok(response);
+            
+        }
     }    
 }
 

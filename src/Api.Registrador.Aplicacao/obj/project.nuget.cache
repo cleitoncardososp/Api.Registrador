@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "djrcobxQ+vDj9Tlzx9bgTHOPMoQVNhUh/v9rofuJ0l+5cqvY80pC0QW7A2wSa5vuqRfuUZuaK6lspbhsNJfkHw==",
+  "dgSpecHash": "kObIgfyH+mmdldXQVeVfqZHVZ/4DKZdweIR5ghykrkjUqc1XfQzNAzCAi253Wte9LP3Ub7kXhKCz2cakcD1h7g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Aplicacao\\Aplicacao.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Cleiton\\.nuget\\packages\\litedb\\5.0.10\\litedb.5.0.10.nupkg.sha512",
     "C:\\Users\\Cleiton\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
   ],
   "logs": []

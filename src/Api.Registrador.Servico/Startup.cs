@@ -31,7 +31,7 @@ namespace Servico
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<ApplicationContext>(opt=>opt.UseInMemoryDatabase("Teste")); // Banco InMemory
+            //services.AddDbContext<ApplicationContext>(opt=>opt.UseInMemoryDatabase("Banco")); // Banco InMemory
 
             ConfigurarDependencias(services);
 
@@ -42,6 +42,7 @@ namespace Servico
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Servico", Version = "v1" });
             });
+
         }
 
         public void ConfigurarDependencias(IServiceCollection services)
@@ -77,7 +78,7 @@ namespace Servico
                 endpoints.MapControllers();
             });
 
-            app.UseStatusCodePages("text/plain", "Mensagem: Recurso não encontrado - {0}");      
+            app.UseStatusCodePages("application/json", "Mensagem: Recurso não encontrado - {0}");      
         }
     }
 }

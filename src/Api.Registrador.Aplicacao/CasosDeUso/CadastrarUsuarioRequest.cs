@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Domain.Entidades;
+using Aplicacao.Interfaces;
+using LiteDB;
 using MediatR;
 
 namespace Aplicacao.CasosDeUso
@@ -19,6 +21,14 @@ namespace Aplicacao.CasosDeUso
 
     public class CadastrarUsuarioRequestHandler : IRequestHandler<CadastrarUsuarioRequest, CadastrarUsuarioResponse>
     {
+
+        public IUsuarioRepositorio UsuarioRepositorio {get; set;}
+
+        public CadastrarUsuarioRequestHandler(IUsuarioRepositorio usuarioRepositorio)
+        {
+            UsuarioRepositorio = usuarioRepositorio;
+        }
+
         public Task<CadastrarUsuarioResponse> Handle(CadastrarUsuarioRequest request, CancellationToken cancellationToken)
         {
             try
@@ -30,22 +40,27 @@ namespace Aplicacao.CasosDeUso
                     usuario.Data_Atualizacao = usuario.Data_Criacao;
                     usuario.Ultimo_Login = usuario.Data_Criacao;
 
-                return Task.FromResult(new CadastrarUsuarioResponse(){Status = 200, Message = "Usuario Cadastrado",  Data = usuario});
+                UsuarioRepositorio.Inserir(usuario);
+
+                return Task.FromResult(new CadastrarUsuarioResponse(){id = usuario.IdUsuario , 
+                                                                    data_criacao = usuario.Data_Criacao,
+                                                                    data_atualizacao = usuario.Data_Atualizacao,
+                                                                    ultimo_login = usuario.Ultimo_Login,
+                                                                    token = usuario.Token});
             }
             catch (Exception ex)
             {
-                return Task.FromResult(new CadastrarUsuarioResponse(){Status=1, Message = "ERRO: " + ex});
+                return Task.FromResult(new CadastrarUsuarioResponse(){});
             }
         }
     }
 
     public class CadastrarUsuarioResponse
     {
-        public int Status {get; set;}
-        
-        public string Message {get; set;}
-
-        public Usuario Data {get; set;}
+        public string id {get; set;}
+        public DateTime data_criacao {get; set;}
+        public DateTime data_atualizacao {get; set;}
+        public DateTime ultimo_login {get; set;}
+        public string token {get; set;}
     }
-
 }

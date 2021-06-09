@@ -1,16 +1,16 @@
+using System.Data.Common;
 using System;
 using Aplicacao.Interfaces;
 using Domain.Entidades;
 using Dominio.Fabricas;
 using Infraestrutura.Repositorios.Dtos;
+using LiteDB;
 
 namespace Infraestrutura.Repositorios
 {
     public class UsuarioRepositorio : IUsuarioRepositorio
-    {
-
-
-        //public ApplicationContext Context{get; set;}
+    {       
+    
         public IUsuarioFabrica UsuarioFabrica {get; set;}
 
 
@@ -20,26 +20,26 @@ namespace Infraestrutura.Repositorios
             
         }
 
-        public Usuario Consultar(string idUsuario)
+        public Usuario Buscar(string token)
         {
-            return null;
+            using (var db = new LiteDatabase("banco.db"))
+            {
+                var usuario = db.GetCollection<Usuario>().FindOne(x => x.Token == token);                            
+                
+
+                
+                return usuario;
+            }
         }
 
         public void Inserir(Usuario usuario)
         {
-            UsuarioDTO usuarioDto = new UsuarioDTO();
-                usuarioDto.IdUsuario = usuario.IdUsuario;
-                usuarioDto.Data_Criacao = usuario.Data_Criacao;
-                usuarioDto.Data_Atualizacao = usuario.Data_Atualizacao;
-                usuarioDto.Ultimo_Login = usuario.Ultimo_Login;
-                usuarioDto.Nome = usuario.Nome;
-                usuarioDto.Email = usuario.Email;
-                usuarioDto.Senha = usuario.Senha;
-                usuarioDto.Telefones = usuario.Telefones;
-
-            //Context.Usuario.Add(usuarioDto);
-
-            //Context.SaveChanges();
+            using (var db = new LiteDatabase("banco.db"))
+            {
+                var usuarioCollection = db.GetCollection<Usuario>("usuarios");
+                usuarioCollection.Insert(usuario);
+                db.Commit();
+            }
         }
     }
 }
