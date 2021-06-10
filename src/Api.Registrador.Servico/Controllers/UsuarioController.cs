@@ -38,22 +38,15 @@ namespace Servico.Controllers
                     _logger.LogInformation("Caso de uso finalizado com sucesso. Retorno do caso de uso", response);
                     return Ok(response);
                 }
-                catch (ExcecaoDominio ex)
+                catch(Exception ex)
                 {
-                    _logger.LogInformation("Exceção de domínio ao rodar o caso de uso", ex);
-                    return BadRequest(ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogWarning("Erro não tratado", ex);
-                    return BadRequest(ex.Message);
+                    return Unauthorized("Mensagem: " + ex.Message);
                 }
             }
             else
                 {
                     _logger.LogInformation("Modelo Inválido", ModelState);
                     return BadRequest(ModelState);
-                    
                 }
         }
         
@@ -62,22 +55,37 @@ namespace Servico.Controllers
         [HttpPost("signin")]
         public async Task<ActionResult> EntrarUsuario([FromBody]EntrarUsuarioRequest request)
         {
-            _logger.LogInformation("Dentro do Caso de Uso Entrar Usuario");
+            try
+            {
+                _logger.LogInformation("Dentro do Caso de Uso Entrar Usuario");
 
-            EntrarUsuarioResponse response = await Mediator.Send(request);
-            return Ok(response);
+                EntrarUsuarioResponse response = await Mediator.Send(request);
+                return Ok(response);
+            }
+            catch (System.Exception ex)
+            {
+                return Unauthorized("Mensagem: " + ex.Message);
+            }
         }
 
 
-        //ConsultarUsuario
+        //BuscarUsuario
         [HttpGet("{IdUsuario}/buscarusuario")]
-        public async Task<ActionResult> ConsultarUsuario([FromBody]BuscarUsuarioRequest request)
+        public async Task<ActionResult> BuscarUsuario([FromRoute]BuscarUsuarioRequest request)
         {
-            _logger.LogInformation("Dentro do Caso de Uso Buscar Usuario");
-            
-            BuscarUsuarioResponse response = await Mediator.Send(request);
-            return Ok(response);
-            
+            try
+            {
+                _logger.LogInformation("Dentro do Caso de Uso Buscar Usuario");
+                
+                BuscarUsuarioResponse response = await Mediator.Send(request);
+                return Ok(response);
+                
+            }
+            catch (System.Exception ex)
+            {
+                _logger.LogInformation("Erro não tratado Buscar usuário: " + ex);
+                return BadRequest();
+            }
         }
     }    
 }

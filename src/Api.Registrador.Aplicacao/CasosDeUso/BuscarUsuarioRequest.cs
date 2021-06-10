@@ -7,45 +7,58 @@ using Aplicacao.Interfaces;
 using Domain.Entidades;
 using LiteDB;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace Aplicacao.CasosDeUso
 {
-    
     public class BuscarUsuarioRequest : IRequest<BuscarUsuarioResponse>
     {
-        public string Token { get; private set; }
+        public string IdUsuario { get; set; }
     }
 
     public class BuscarUsuarioRequestHandler : IRequestHandler<BuscarUsuarioRequest, BuscarUsuarioResponse>
     {
         public IUsuarioRepositorio UsuarioRepositorio {get; set;}
-        public BuscarUsuarioRequestHandler(IUsuarioRepositorio usuarioRepositorio)
+        public ILogger<BuscarUsuarioResponse> Logger{get;set;}
+        public BuscarUsuarioRequestHandler(IUsuarioRepositorio usuarioRepositorio, ILogger<BuscarUsuarioResponse> logger)
         {
             UsuarioRepositorio = usuarioRepositorio;
+            Logger = logger;
         }
 
         public Task<BuscarUsuarioResponse> Handle(BuscarUsuarioRequest request, CancellationToken cancellationToken)
         {
             try
             {
-                UsuarioRepositorio.Buscar(request.Token);
+                Usuario usuario = UsuarioRepositorio.Buscar(request.IdUsuario); 
 
-                return Task.FromResult(new BuscarUsuarioResponse(){Status = 200, Message = "Usuario Localizado "});
+                return Task.FromResult(new BuscarUsuarioResponse(){id = usuario.IdUsuario , 
+                                                                    data_criacao = usuario.Data_Criacao,
+                                                                    data_atualizacao = usuario.Data_Atualizacao,
+                                                                    ultimo_login = usuario.Ultimo_Login,
+                                                                    nome = usuario.Nome,
+                                                                    email = usuario.Email,
+                                                                    senha = usuario.Senha,
+                                                                    telefones = usuario.Telefones,
+                                                                    token = usuario.Token});
             }
             catch (Exception ex)
             {
-                return Task.FromResult(new BuscarUsuarioResponse(){Status=1, Message = "ERRO: " + ex});
+                return Task.FromResult(new BuscarUsuarioResponse(){nome = "Erro: " + ex});
             }
         }
     }
 
     public class BuscarUsuarioResponse
     {
-        public int Status {get; set;}
-        
-        public string Message {get; set;}
-
-        public Usuario Data {get; set;}
+        public string id {get; set;}
+        public DateTime data_criacao {get; set;}
+        public DateTime data_atualizacao {get; set;}
+        public DateTime ultimo_login {get; set;}
+        public string nome {get; set;}
+        public string email {get; set;}
+        public string senha {get; set;}
+        public List<Telefone> telefones {get; set;}
+        public string token {get; set;}
     }
-
 }

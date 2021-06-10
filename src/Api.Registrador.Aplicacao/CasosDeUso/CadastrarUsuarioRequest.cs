@@ -32,7 +32,7 @@ namespace Aplicacao.CasosDeUso
         public Task<CadastrarUsuarioResponse> Handle(CadastrarUsuarioRequest request, CancellationToken cancellationToken)
         {
             try
-            {
+            {                
                 List<Telefone> telefones = new List<Telefone>(request.Telefones);
 
                 Usuario usuario = new Usuario(request.Nome, request.Email, request.Senha, telefones);
@@ -40,17 +40,24 @@ namespace Aplicacao.CasosDeUso
                     usuario.Data_Atualizacao = usuario.Data_Criacao;
                     usuario.Ultimo_Login = usuario.Data_Criacao;
 
-                UsuarioRepositorio.Inserir(usuario);
+                if(UsuarioRepositorio.BuscarEmail(request.Email) == null)
+                    {
+                        UsuarioRepositorio.Inserir(usuario);
 
-                return Task.FromResult(new CadastrarUsuarioResponse(){id = usuario.IdUsuario , 
-                                                                    data_criacao = usuario.Data_Criacao,
-                                                                    data_atualizacao = usuario.Data_Atualizacao,
-                                                                    ultimo_login = usuario.Ultimo_Login,
-                                                                    token = usuario.Token});
+                        return Task.FromResult(new CadastrarUsuarioResponse(){id = usuario.IdUsuario , 
+                                                                            data_criacao = usuario.Data_Criacao,
+                                                                            data_atualizacao = usuario.Data_Atualizacao,
+                                                                            ultimo_login = usuario.Ultimo_Login,
+                                                                            token = usuario.Token});
+                    }
+                    else
+                        {
+                            throw new Exception("E-mail já cadastrado no Banco de Dados!!!");
+                        }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                return Task.FromResult(new CadastrarUsuarioResponse(){});
+                throw new Exception("E-mail já cadastrado no Banco de Dados!!!");
             }
         }
     }

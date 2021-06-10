@@ -1,11 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "mAVmK8oECbtP+uf0TmZVzztklQQUMvnV2tXahOOChRSGbV70DDbN0bN3ggEKPzCaGa1qegWoX1YvuOj549J/ow==",
+  "dgSpecHash": "XGFuYATPge51uNyxv0EOir+GPJ6YkFgKkRnQaT/T54pvKsf3w7WfyEk5BukGVNzKwYWzFAk4odUxgg6hnCW8Vg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Cleiton\\Desktop\\Api.Registrador\\src\\Api.Registrador.Infraestrutura\\Infraestrutura.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Cleiton\\.nuget\\packages\\litedb\\5.0.10\\litedb.5.0.10.nupkg.sha512",
-    "C:\\Users\\Cleiton\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512"
+    "C:\\Users\\Cleiton\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\Cleiton\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\Cleiton\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Cleiton\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\Cleiton\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Cleiton\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\Cleiton\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

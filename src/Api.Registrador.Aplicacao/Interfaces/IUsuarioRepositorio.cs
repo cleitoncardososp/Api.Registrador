@@ -5,8 +5,9 @@ namespace Aplicacao.Interfaces
 {
     public interface IUsuarioRepositorio
     {
-        Usuario Buscar(string idUsuario);
+        Usuario Buscar(String idUsuario);
         void Inserir(Usuario usuario);
         void Atualizar(Usuario usuario);
+        Usuario BuscarEmail(string email);
     }
 }
